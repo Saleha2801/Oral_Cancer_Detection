@@ -1,0 +1,40 @@
+localization_Tongue,localization_Lip,localization_Floor of mouth,localization_Buccal mucosa,localization_Palate,localization_Gingiva,larger_size,tobacco_use_Yes,tobacco_use_Former,tobacco_use_No,tobacco_use_Not informed,alcohol_consumption_No,alcohol_consumption_Former,alcohol_consumption_Yes,alcohol_consumption_Not informed,sun_exposure_No,sun_exposure_Yes,sun_exposure_Not informed,gender_M,gender_F,age_group_2,age_group_1,age_group_0,path,TaskIV,folder,label_number
+1,0,0,0,0,0,2.0,1,0,0,0,1,0,0,0,1,0,0,1,0,1,0,0,0001.png,OSCC,6,2
+1,0,0,0,0,0,2.5,1,0,0,0,0,1,0,0,0,1,0,1,0,0,1,0,0003.png,OSCC,6,2
+1,0,0,0,0,0,0.0,0,0,0,1,0,0,0,1,0,0,1,1,0,1,0,0,0015.png,Leukoplakia with dysplasia,6,0
+0,0,0,0,1,0,1.5,0,1,0,0,1,0,0,0,1,0,0,1,0,1,0,0,0019.png,OSCC,6,2
+0,0,0,0,1,0,1.5,0,1,0,0,1,0,0,0,1,0,0,1,0,1,0,0,0020.png,OSCC,6,2
+0,0,0,0,0,1,2.0,0,1,0,0,1,0,0,0,1,0,0,0,1,1,0,0,0022.png,Leukoplakia without dysplasia,6,1
+0,1,0,0,0,0,0.3,0,0,1,0,1,0,0,0,0,1,0,1,0,1,0,0,0031.png,OSCC,6,2
+1,0,0,0,0,0,1.0,0,0,0,1,0,0,0,1,0,0,1,0,1,1,0,0,0034.png,OSCC,6,2
+0,0,0,1,0,0,0.2,1,0,0,0,0,0,1,0,0,1,0,0,1,1,0,0,0036.png,Leukoplakia with dysplasia,6,0
+1,0,0,0,0,0,0.4,0,0,1,0,0,0,1,0,1,0,0,0,1,0,1,0,0041.png,Leukoplakia with dysplasia,6,0
+1,0,0,0,0,0,0.4,0,0,1,0,0,0,1,0,1,0,0,0,1,0,1,0,0044.png,Leukoplakia with dysplasia,6,0
+1,0,0,0,0,0,0.1,0,0,0,1,0,0,0,1,0,0,1,0,1,0,1,0,0062.png,OSCC,6,2
+0,0,0,0,0,1,1.5,1,0,0,0,1,0,0,0,0,1,0,1,0,0,0,1,0070.png,Leukoplakia without dysplasia,6,1
+0,0,1,0,0,0,3.5,1,0,0,0,0,1,0,0,0,1,0,1,0,1,0,0,0073.png,OSCC,6,2
+0,0,0,0,0,1,0.3,1,0,0,0,1,0,0,0,1,0,0,0,1,1,0,0,0086.png,Leukoplakia without dysplasia,6,1
+0,0,0,0,0,1,4.5,0,0,0,1,0,0,0,1,0,0,1,1,0,0,1,0,0092.png,Leukoplakia without dysplasia,6,1
+1,0,0,0,0,0,0.1,0,0,0,1,0,0,0,1,0,0,1,0,1,0,1,0,0095.png,Leukoplakia without dysplasia,6,1
+1,0,0,0,0,0,0.1,0,0,0,1,0,0,0,1,0,0,1,0,1,0,1,0,0097.png,Leukoplakia without dysplasia,6,1
+1,0,0,0,0,0,2.0,0,0,1,0,1,0,0,0,1,0,0,0,1,1,0,0,0109.png,OSCC,6,2
+1,0,0,0,0,0,5.0,0,0,0,1,0,0,0,1,0,0,1,1,0,1,0,0,0116.png,OSCC,6,2
+0,0,0,1,0,0,2.0,1,0,0,0,1,0,0,0,0,1,0,0,1,0,1,0,0117.png,Leukoplakia with dysplasia,6,0
+0,0,0,1,0,0,2.0,1,0,0,0,1,0,0,0,0,1,0,0,1,0,1,0,0119.png,Leukoplakia with dysplasia,6,0
+0,0,0,0,0,1,1.0,0,0,0,1,0,0,0,1,0,0,1,0,1,0,1,0,0123.png,Leukoplakia with dysplasia,6,0
+0,0,0,1,0,0,1.5,1,0,0,0,1,0,0,0,1,0,0,1,0,0,1,0,0124.png,Leukoplakia with dysplasia,6,0
+0,0,0,1,0,0,1.5,1,0,0,0,1,0,0,0,1,0,0,1,0,0,1,0,0125.png,Leukoplakia with dysplasia,6,0
+0,0,0,1,0,0,1.5,1,0,0,0,1,0,0,0,1,0,0,1,0,0,1,0,0126.png,Leukoplakia with dysplasia,6,0
+1,0,0,0,0,0,3.0,0,0,0,1,0,0,0,1,0,0,1,0,1,0,1,0,0138.png,OSCC,6,2
+0,0,0,0,0,1,0.8,0,0,1,0,1,0,0,0,1,0,0,0,1,1,0,0,0142.png,Leukoplakia without dysplasia,6,1
+1,0,0,0,0,0,0.4,0,0,0,1,0,0,0,1,0,0,1,1,0,1,0,0,0156.png,OSCC,6,2
+0,1,0,0,0,0,1.0,0,0,1,0,0,1,0,0,1,0,0,1,0,1,0,0,0171.png,Leukoplakia with dysplasia,6,0
+1,0,0,0,0,0,0.5,0,0,0,1,0,0,0,1,0,0,1,1,0,0,1,0,0184.png,Leukoplakia without dysplasia,6,1
+0,1,0,0,0,0,1.5,1,0,0,0,0,1,0,0,1,0,0,1,0,0,1,0,0186.png,Leukoplakia with dysplasia,6,0
+0,1,0,0,0,0,1.5,1,0,0,0,0,1,0,0,1,0,0,1,0,0,1,0,0187.png,Leukoplakia with dysplasia,6,0
+0,1,0,0,0,0,1.5,1,0,0,0,0,1,0,0,1,0,0,1,0,0,1,0,0190.png,Leukoplakia with dysplasia,6,0
+0,0,0,0,0,1,3.0,0,0,0,1,0,0,0,1,0,0,1,1,0,1,0,0,0193.png,OSCC,6,2
+0,0,0,1,0,0,2.0,0,0,0,1,0,0,0,1,0,0,1,0,1,0,1,0,0200.png,Leukoplakia without dysplasia,6,1
+0,0,1,0,0,0,1.5,0,0,0,1,0,0,0,1,0,0,1,0,1,1,0,0,0218.png,Leukoplakia with dysplasia,6,0
+1,0,0,0,0,0,5.0,1,0,0,0,0,0,1,0,1,0,0,1,0,0,1,0,0224.png,OSCC,6,2
+1,0,0,0,0,0,1.4,0,0,0,1,0,0,0,1,0,0,1,0,1,0,1,0,0229.png,OSCC,6,2
