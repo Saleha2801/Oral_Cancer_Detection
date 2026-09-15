@@ -8,8 +8,16 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
 from PIL import Image
 import io
+import sys
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, ".."))
+if ROOT_DIR not in sys.path:
+    sys.path.insert(0, ROOT_DIR)
 
 from backend.inference import multimodal_service
+from training.experiment_manager import experiment_manager
+from training.dataset_manager import dataset_manager
 
 app = FastAPI(
     title="Oral Cancer AI - Multimodal Detection API",
@@ -285,3 +293,145 @@ async def predict_multimodal(
         },
         "structured_report": structured_report,
     })
+
+
+# ============================================================
+# EXPERIMENTATION & RESULTS APIS
+# ============================================================
+
+@app.get("/api/experiments")
+def get_experiments():
+    """
+    Returns all authentic recorded training experiments from experiments.csv.
+    """
+    exps = experiment_manager.get_all_experiments()
+    return JSONResponse(content={"experiments": exps, "count": len(exps)})
+
+
+@app.get("/api/experiments/summary")
+def get_experiments_summary():
+    """
+    Returns overall summary including best-performing model dynamically calculated from test results.
+    """
+    summary = experiment_manager.get_summary_metrics()
+    return JSONResponse(content=summary)
+
+
+@app.get("/api/experiments/models")
+def get_models_info():
+    """
+    Returns available deep learning architectures and baseline specifications.
+    """
+    return JSONResponse(content={
+        "models": [
+            {
+                "id": "CustomCNN",
+                "name": "Custom CNN Baseline",
+                "family": "Convolutional Neural Network",
+                "parameters": "468.3K",
+                "trainable_parameters": 468322,
+                "description": "4-stage baseline CNN with BatchNorm, MaxPool, Dropout, and Global Average Pooling."
+            },
+            {
+                "id": "ResNet18",
+                "name": "ResNet-18",
+                "family": "Residual Networks (ResNet)",
+                "parameters": "11.18M",
+                "trainable_parameters": 11177538,
+                "description": "Lightweight residual learning with shortcut connections, pretrained on ImageNet."
+            },
+            {
+                "id": "ResNet50",
+                "name": "ResNet-50",
+                "family": "Residual Networks (ResNet)",
+                "parameters": "23.51M",
+                "trainable_parameters": 23512130,
+                "description": "Deeper 50-layer bottleneck residual architecture for high-capacity representation."
+            },
+            {
+                "id": "EfficientNetB0",
+                "name": "EfficientNet-B0",
+                "family": "Compound Scaling",
+                "parameters": "4.01M",
+                "trainable_parameters": 4010110,
+                "description": "Uniformly balanced depth, width, and resolution scaling for optimal computational efficiency."
+            },
+            {
+                "id": "DenseNet121",
+                "name": "DenseNet-121",
+                "family": "Densely Connected Networks",
+                "parameters": "6.96M",
+                "trainable_parameters": 6955906,
+                "description": "Connects all subsequent layers directly, alleviating vanishing gradients and encouraging feature reuse."
+            }
+        ]
+    })
+
+
+@app.get("/api/experiments/metrics")
+def get_experiments_metrics():
+    """
+    Returns comparison metrics grouped by model, epochs, batch size, and learning rate.
+    """
+    metrics = experiment_manager.get_comparison_metrics()
+    return JSONResponse(content=metrics)
+
+
+@app.get("/api/experiments/history/{experiment_id}")
+def get_experiment_history(experiment_id: str):
+    """
+    Returns epoch-by-epoch loss and accuracy history for a specific experiment.
+    """
+    history_data = experiment_manager.get_history(experiment_id)
+    if not history_data:
+        raise HTTPException(status_code=404, detail=f"History for experiment {experiment_id} not found")
+    return JSONResponse(content=history_data)
+
+
+@app.get("/api/experiments/confusion-matrix/{experiment_id}")
+def get_experiment_confusion_matrix(experiment_id: str):
+    """
+    Returns confusion matrix data for a specific experiment.
+    """
+    cm_data = experiment_manager.get_confusion_matrix(experiment_id)
+    if not cm_data:
+        raise HTTPException(status_code=404, detail=f"Confusion matrix for experiment {experiment_id} not found")
+    return JSONResponse(content=cm_data)
+
+
+@app.get("/api/experiments/datasets")
+def get_datasets_statistics():
+    """
+    Returns real statistics for both Clinical Oral Photography and NDU-UFES Histopathology datasets.
+    """
+    try:
+        stats_oral = dataset_manager.get_dataset_statistics("clinical_oral")
+    except Exception as e:
+        stats_oral = {"error": str(e)}
+
+    try:
+        stats_histo = dataset_manager.get_dataset_statistics("ndu_ufes_histo")
+    except Exception as e:
+        stats_histo = {"error": str(e)}
+
+    return JSONResponse(content={
+        "clinical_oral": stats_oral,
+        "ndu_ufes_histo": stats_histo,
+        "additional_datasets_recommended": [
+            {
+                "name": "Histopathological Imaging Database (Rahman et al.)",
+                "role": "External Validation / Pre-training",
+                "samples": 1224,
+                "modality": "Histopathology H&E",
+                "status": "Ready for drop-in placement at datasets/external/histopathology_external"
+            },
+            {
+                "name": "Annotated Oral Cavity Images (AIIMS / Lin et al.)",
+                "role": "Clinical Photography External Validation",
+                "samples": 3000,
+                "modality": "Intraoral Photography",
+                "status": "Ready for drop-in placement at datasets/external/clinical_external"
+            }
+        ]
+    })
+

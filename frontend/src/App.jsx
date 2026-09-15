@@ -29,11 +29,12 @@ import {
 } from 'lucide-react'
 import jsPDF from 'jspdf'
 import html2canvas from 'html2canvas'
+import ExperimentsPage from './components/ExperimentsPage'
 
 const API_BASE = '' // Proxied by Vite to http://127.0.0.1:8000
 
 export default function App() {
-  const [currentTab, setCurrentTab] = useState('home') // 'home' | 'detection' | 'results' | 'report' | 'about'
+  const [currentTab, setCurrentTab] = useState('home') // 'home' | 'detection' | 'experiments' | 'results' | 'report' | 'about'
   const [modelInfo, setModelInfo] = useState(null)
   const [sampleImages, setSampleImages] = useState({ oral: [], histopathology: [] })
   const [apiOnline, setApiOnline] = useState(false)
@@ -330,6 +331,16 @@ export default function App() {
               }`}
             >
               About Models
+            </button>
+            <button
+              onClick={() => setCurrentTab('experiments')}
+              className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
+                currentTab === 'experiments'
+                  ? 'bg-teal-50 text-teal-700 border border-teal-200'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+              }`}
+            >
+              Model Experiments
             </button>
 
             {/* Model Status Indicator */}
@@ -1326,6 +1337,9 @@ export default function App() {
             </div>
           </div>
         )}
+
+        {/* TAB 6: MODEL EXPERIMENTS */}
+        {currentTab === 'experiments' && <ExperimentsPage />}
       </main>
 
       {/* Footer */}

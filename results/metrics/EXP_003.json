@@ -1,0 +1,53 @@
+{
+  "experiment_id": "EXP_003",
+  "config": {
+    "model": "ResNet50",
+    "dataset": "clinical_oral",
+    "epochs": 10,
+    "batch_size": 32,
+    "learning_rate": 0.0005,
+    "optimizer": "Adam",
+    "patience": 7,
+    "seed": 42
+  },
+  "metrics": {
+    "test_loss": 0.26482003154233097,
+    "test_accuracy": 0.95,
+    "precision": 0.95,
+    "recall": 0.95,
+    "f1_score": 0.95,
+    "auc": 0.9898989898989898,
+    "classification_report": {
+      "Cancer": {
+        "precision": 0.9444444444444444,
+        "recall": 0.9444444444444444,
+        "f1-score": 0.9444444444444444,
+        "support": 18.0
+      },
+      "Non-cancer": {
+        "precision": 0.9545454545454546,
+        "recall": 0.9545454545454546,
+        "f1-score": 0.9545454545454546,
+        "support": 22.0
+      },
+      "accuracy": 0.95,
+      "macro avg": {
+        "precision": 0.9494949494949495,
+        "recall": 0.9494949494949495,
+        "f1-score": 0.9494949494949495,
+        "support": 40.0
+      },
+      "weighted avg": {
+        "precision": 0.95,
+        "recall": 0.95,
+        "f1-score": 0.95,
+        "support": 40.0
+      }
+    }
+  },
+  "class_names": [
+    "Cancer",
+    "Non-cancer"
+  ],
+  "timestamp": "2026-09-15T10:55:16.110278+00:00"
+}

@@ -1,0 +1,53 @@
+{
+  "experiment_id": "EXP_012",
+  "config": {
+    "model": "ResNet18",
+    "dataset": "ndu_ufes_histo",
+    "epochs": 10,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "optimizer": "Adam",
+    "patience": 7,
+    "seed": 42
+  },
+  "metrics": {
+    "test_loss": 0.3309410810470581,
+    "test_accuracy": 0.875,
+    "precision": 0.8800940438871473,
+    "recall": 0.875,
+    "f1_score": 0.8769168684422922,
+    "auc": 0.9133333333333333,
+    "classification_report": {
+      "OSCC (Malignant)": {
+        "precision": 0.7272727272727273,
+        "recall": 0.8,
+        "f1-score": 0.7619047619047619,
+        "support": 10.0
+      },
+      "Leukoplakia (Non-cancer)": {
+        "precision": 0.9310344827586207,
+        "recall": 0.9,
+        "f1-score": 0.9152542372881356,
+        "support": 30.0
+      },
+      "accuracy": 0.875,
+      "macro avg": {
+        "precision": 0.829153605015674,
+        "recall": 0.8500000000000001,
+        "f1-score": 0.8385794995964487,
+        "support": 40.0
+      },
+      "weighted avg": {
+        "precision": 0.8800940438871473,
+        "recall": 0.875,
+        "f1-score": 0.8769168684422922,
+        "support": 40.0
+      }
+    }
+  },
+  "class_names": [
+    "OSCC (Malignant)",
+    "Leukoplakia (Non-cancer)"
+  ],
+  "timestamp": "2026-09-15T16:08:55.199807+00:00"
+}

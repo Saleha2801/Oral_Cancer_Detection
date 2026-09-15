@@ -1,0 +1,27 @@
+{
+  "experiment_id": "EXP_009",
+  "confusion_matrix": [
+    [
+      12,
+      6
+    ],
+    [
+      0,
+      22
+    ]
+  ],
+  "normalized": [
+    [
+      0.6666666666666666,
+      0.3333333333333333
+    ],
+    [
+      0.0,
+      1.0
+    ]
+  ],
+  "class_names": [
+    "Cancer",
+    "Non-cancer"
+  ]
+}

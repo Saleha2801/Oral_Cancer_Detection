@@ -1,0 +1,27 @@
+{
+  "experiment_id": "EXP_012",
+  "confusion_matrix": [
+    [
+      8,
+      2
+    ],
+    [
+      3,
+      27
+    ]
+  ],
+  "normalized": [
+    [
+      0.8,
+      0.2
+    ],
+    [
+      0.1,
+      0.9
+    ]
+  ],
+  "class_names": [
+    "OSCC (Malignant)",
+    "Leukoplakia (Non-cancer)"
+  ]
+}
